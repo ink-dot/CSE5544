@@ -1,17 +1,3 @@
-# (C) Authors: 
-#
-# Professor Jian Chen
-# Rui Li
-# Isabel nekic
-import pandas as pd
-import random
-import os
-import numpy as np
-import random
-import matplotlib.pyplot as plt
-import seaborn as sns
-from matplotlib.colors import LogNorm, Normalize
-from matplotlib.ticker import MaxNLocator
 
 st.title("CSE 5544 Lab 3")
 st.markdown("### nekic.4")
