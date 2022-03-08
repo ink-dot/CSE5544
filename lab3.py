@@ -1,3 +1,14 @@
+# (C) Authors: 
+#
+# Professor Jian Chen
+# Rui Li
+# Isabel nekic
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+import altair as alt
 
 st.title("CSE 5544 Lab 3")
 st.markdown("### nekic.4")
