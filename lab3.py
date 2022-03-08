@@ -15,32 +15,26 @@ import altair as alt
 st.title("CSE 5544 Lab 3")
 st.markdown("### nekic.4")
 
-df_data = pd.read_csv("https://raw.githubusercontent.com/ink-dot/CSE5544/main/CSE5544.Lab1.ClimateData%20-%20Sheet1.csv")
-df_data.columns = df_data.iloc[0]
-df_data.drop(df_data.index[0], inplace=True)
+data = pd.read_csv("https://raw.githubusercontent.com/ink-dot/CSE5544/main/CSE5544.Lab1.ClimateData%20-%20Sheet1.csv")
 
-df_data.set_index('Country\year', inplace=True)
-df_data = df_data.drop(columns=['Non-OECD Economies'])
-df_data.drop(index='OECD - Total', inplace=True)
-df_data.reset_index(inplace=True)
+#prepare the data
+countries = data['Country\\year']
+df_data_country = data.iloc[:,2:]
+df_data_country = df_data_country.apply(pd.to_numeric, errors='coerce')
+country_stats = pd.DataFrame({'country': countries, 'mean': df_data_country.mean(axis=1),
+                       'std': df_data_country.std(axis=1)})
 
-countries = df_data['Country\year']
-emissions = df_data.iloc[:,1:]
-emissions = emissions.apply(pd.to_numeric, errors='coerce')
+#render using altair
+chart_data = data.drop(columns=['Non-OECD Economies'])
+chart_data = pd.melt(chart_data, id_vars=['Country\year'], var_name='year')
+chart_data['value'] = chart_data['value'].apply(pd.to_numeric, errors='coerce')
+chart_data.rename(columns={"Country\year": "country", "value":"emission"}, inplace = True)
+chart_data
 
-stats = pd.DataFrame({'total' : emissions.sum(), 'mean': emissions.mean(),'std': emissions.std()})
-total = emissions.sum(axis=1)
-mean = emissions.mean(axis=1)
-std = emissions.std(axis=1)
+heatmap = alt.Chart(chart_data).mark_rect().encode(
+    x=alt.X('country:N', title = 'country'),
+    y=alt.Y('year:O', title = 'year'),
+    color='emission:Q',
+    tooltip=['country', 'year', 'emission']
+)
 
-st.header("P1: Honest/Ethical/Truthful")
-
-df_data1 = df_data.apply(pd.to_numeric, errors='coerce')
-
-fig, ax = plt.subplots(figsize=(20, 10))
-ax = sns.heatmap(df_data1.T, linewidths=.5, cmap='rainbow', cbar_kws={'label': 'Emissions in Tons of C02'})
-
-ax.set_xlabel('Country')
-ylabel = ax.set_ylabel('Year')
-xaxis = plt.xticks(rotation=90, ha='center', fontsize=8)
-title = ax.set_title('Heatmap of Emissions of Countries over Years')
