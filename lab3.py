@@ -5,6 +5,8 @@
 # Isabel nekic
 import streamlit as st
 import pandas as pd
+import random
+import os
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
