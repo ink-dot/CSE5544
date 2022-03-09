@@ -20,6 +20,7 @@ data = pd.read_csv("https://raw.githubusercontent.com/ink-dot/CSE5544/main/CSE55
 
 # Beginning of P1
 st.markdown("### P1: Honest/Ethical/Truthful")
+st.markdown("#### Source: https://stats.oecd.org/Index.aspx?DataSetCode=AIR_GHG")
 
 df_data1 = data.apply(pd.to_numeric, errors='coerce')
 
@@ -56,3 +57,5 @@ st.markdown("### Write Up")
 "For P1, blank spaces show where there was no data recorded for that year in that country. For P2, however, missing data was replaced with a 0, which shows on the heatmap as there being 0 emissions for that country and year. This is very misleading, as it implies that emissions for countries with missing data are much lower than they might be. This is especially relevant in regards to China. China has very high emissions for the 5 recorded years, but appears to overall have low emissions in the P2 heatmap because the missing years have been filled in with 0s, even though it is impossible for China to have had 0 emissions in those unrecorded years. By leaving the missing data as NaN, P1 allows a more straightforward and truthful reading of the data than P2."
 
 "The titles for P2 are either missing or vague. The color bar showing the emission values to color relationship is missing. The viewer can only guess what the different colors mean. The titles for P1 are clear and helpful. The color bar is included and labeled."
+
+"The climate data source is listed in P1. There is no listed source in P2."
