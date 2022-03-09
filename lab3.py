@@ -64,5 +64,5 @@ st.markdown("##### P1")
 st.markdown("##### P2")
 "The visualization for P2 is misleading."
 "The visualization is hard to interpret, as the color palette makes it very hard to distinguish slight differences in emission, along with the fact that the border separating the different data points was removed."
-"In addition, the data is misleading as it was incorrectly cleaned, with missing data being incorrectly replaced with a 0 along with no listed source for the emissions data."
+"In addition, the data is misleading as it was incorrectly cleaned, with missing data being unethically replaced with a 0 along with no listed source for the emissions data."
 "The titles are either missing or vague. The color bar showing the emission values to color relationship is missing and the viewer can only guess what the different colors mean."
