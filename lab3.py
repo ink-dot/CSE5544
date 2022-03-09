@@ -23,10 +23,6 @@ st.markdown("### P1: Honest/Ethical/Truthful")
 st.markdown("##### Source: https://stats.oecd.org/Index.aspx?DataSetCode=AIR_GHG")
 
 df_data1 = data.apply(pd.to_numeric, errors='coerce')
-df_data1.set_index('Country\year', inplace=True)
-df_data1 = df_data1.drop(columns=['Non-OECD Economies'])
-df_data1.drop(index='OECD - Total', inplace=True)
-df_data1.reset_index(inplace=True)
 
 fig, ax = plt.subplots(figsize=(20, 10))
 ax = sns.heatmap(df_data1.T, linewidths=.5, cmap='rainbow', cbar_kws={'label': 'Emissions in Tons of C02'})
