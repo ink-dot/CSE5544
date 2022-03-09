@@ -18,12 +18,15 @@ st.markdown("##### nekic.4")
 st.markdown("##### Link to Github code: https://github.com/ink-dot/CSE5544/edit/main/lab3.py")
 
 data = pd.read_csv("https://raw.githubusercontent.com/ink-dot/CSE5544/main/CSE5544.Lab1.ClimateData%20-%20Sheet1.csv")
-data = data.drop(columns=['Non-OECD Economies'])
-data.drop(index='OECD - Total', inplace=True)
 
 # Beginning of P1
 st.markdown("### P1: Honest/Ethical/Truthful")
 st.markdown("##### Source: https://stats.oecd.org/Index.aspx?DataSetCode=AIR_GHG")
+
+data.set_index('Country\year', inplace=True)
+data = data.drop(columns=['Non-OECD Economies'])
+data.drop(index='OECD - Total', inplace=True)
+data.reset_index(inplace=True)
 
 df_data1 = data.apply(pd.to_numeric, errors='coerce')
 
