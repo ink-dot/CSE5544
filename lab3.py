@@ -19,9 +19,7 @@ st.markdown("##### Link to Github code: https://github.com/ink-dot/CSE5544/edit/
 
 data = pd.read_csv("https://raw.githubusercontent.com/ink-dot/CSE5544/main/CSE5544.Lab1.ClimateData%20-%20Sheet1.csv")
 data = data.drop(columns=['Non-OECD Economies'])
-data = pd.melt(chart_data, id_vars=['Country\year'], var_name='year')
-data['value'] = chart_data['value'].apply(pd.to_numeric, errors='coerce')
-data.rename(columns={"Country\year": "country", "value":"emission"}, inplace = True)
+
 
 # Beginning of P1
 st.markdown("### P1: Honest/Ethical/Truthful")
