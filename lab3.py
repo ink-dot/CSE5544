@@ -32,16 +32,4 @@ title = ax.set_title('Heatmap of Emissions of Countries over Years')
 
 st.pyplot(fig)
 
-# Beginning of P2
-st.header(## "P2: Dishonest/Unethical/Misleading")
 
-df_data2 = data.apply(pd.to_numeric, errors='coerce')
-df_data2.fillna(0, inplace=True)
-
-fig, ax = plt.subplots(figsize=(20, 10))
-ax = sns.heatmap(df_data2.T, cmap='inferno', cbar=False)
-ylabel = ax.set_ylabel('Year')
-xaxis = plt.xticks(rotation=90, ha='center', fontsize=8)
-title = ax.set_title('Emissions')
-
-st.pyplot(fig)
