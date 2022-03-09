@@ -14,7 +14,7 @@ import altair as alt
 
 # Title and header
 st.title("CSE 5544 Lab 3")
-st.markdown("### nekic.4")
+st.markdown("##### nekic.4")
 
 data = pd.read_csv("https://raw.githubusercontent.com/ink-dot/CSE5544/main/CSE5544.Lab1.ClimateData%20-%20Sheet1.csv")
 
