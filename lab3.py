@@ -36,7 +36,7 @@ st.pyplot(fig)
 st.header(## "P2: Dishonest/Unethical/Misleading")
 
 df_data2 = data.apply(pd.to_numeric, errors='coerce')
-df_data2.fillna(0, inplace=True)
+
 
 fig, ax = plt.subplots(figsize=(20, 10))
 ax = sns.heatmap(df_data2.T, cmap='inferno', cbar=False)
