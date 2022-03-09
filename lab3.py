@@ -30,4 +30,4 @@ title = ax.set_title('Heatmap of Emissions of Countries over Years')
 
 
 st.header("P1: Honest/Ethical/Truthful")
-
+st.pyplot(fig)
