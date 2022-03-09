@@ -59,8 +59,8 @@ st.markdown("##### P1")
 
 st.markdown("##### P2")
 "The visualization for P2 is misleading."
-"The color palette makes it very hard to distinguish slight emission differences due to the darker colors.
+"The color palette makes it very hard to distinguish slight emission differences due to the darker colors."
 "The border separating the different data points was removed, making it much harder to read the data, as it is difficult for the viewer to distinguish between different data points."
 "The data was incorrectly cleaned and missing data were replaced with a 0, which shows on the heatmap as there being 0 emissions for that country and year."
-"The titles for P2 are either missing or vague. The color bar showing the emission values to color relationship is missing and the viewer can only guess what the different colors mean. "
+"The titles for P2 are either missing or vague. The color bar showing the emission values to color relationship is missing and the viewer can only guess what the different colors mean."
 "There is no listed source in P2."
