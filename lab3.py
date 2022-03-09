@@ -19,7 +19,7 @@ st.markdown("### nekic.4")
 data = pd.read_csv("https://raw.githubusercontent.com/ink-dot/CSE5544/main/CSE5544.Lab1.ClimateData%20-%20Sheet1.csv")
 
 # Beginning of P1
-st.header("## P1: Honest/Ethical/Truthful")
+st.header("P1: Honest/Ethical/Truthful")
 
 df_data1 = data.apply(pd.to_numeric, errors='coerce')
 
@@ -32,4 +32,17 @@ title = ax.set_title('Heatmap of Emissions of Countries over Years')
 
 st.pyplot(fig)
 
+# Beginning of P2
+st.header("P2: Dishonest/Unethical/Misleading")
+
+df_data2 = data.apply(pd.to_numeric, errors='coerce')
+df_data2.fillna(0, inplace=True)
+
+fig, ax = plt.subplots(figsize=(20, 10))
+ax = sns.heatmap(df_data2.T, cmap='inferno', cbar=False)
+ylabel = ax.set_ylabel('Year')
+xaxis = plt.xticks(rotation=90, ha='center', fontsize=8)
+title = ax.set_title('Emissions')
+
+st.pyplot(fig)
 
